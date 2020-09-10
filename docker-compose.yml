@@ -1,0 +1,22 @@
+####################################
+####### AIOPS SWARM STACK  #########
+####################################
+version: '3.7'
+
+services:
+
+
+  ####################################
+  #### Banco de dados NoSQL
+  ####################################
+  mongodb:
+    image: mongo:latest
+
+
+  ####################################
+  #### Aplicação
+  ####################################
+  application:
+    image: marcelonunes/examplespringboot:latest
+    depends_on:
+      - mongodb
